@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import userRouter from "./routes/user.js";
 import producrRouter from "./routes/product.js";
 import {config} from "dotenv"
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -11,8 +12,11 @@ config({
 })
 
 app.use(express.json());
+app.use(cookieParser())
 app.use("/users",userRouter);  //users will be default for all userRouter path
 app.use(producrRouter);
+
+
 
 mongoose
   .connect(process.env.MONGO_URI, {
