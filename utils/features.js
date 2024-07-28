@@ -7,7 +7,9 @@ export const sendCookie= (profile,res,message,statusCode=200)=>{
     .status(statusCode)
     .cookie("token", token, {
       httpOnly: true,
-      maxAge: 60 * 60 * 100,
+      maxAge: 60 * 60 * 1000,
+      sameSite: "none",
+      secure:true
 
     })
     .json({

@@ -126,6 +126,6 @@ app.post("/login", (req,res)=>{
 //         message:"registered"
 //     })
 // })
-app.listen(3000, () => {
+app.listen(4000, () => {
   console.log("listening");
 });

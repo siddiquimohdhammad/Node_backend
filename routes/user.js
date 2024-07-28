@@ -1,5 +1,5 @@
 import express from "express";
-import  {getAllUsers, addNewUsers, getUserDetail, updateUser, deleteUser, register, login, getMyDetails } from "../controllers/user.js";
+import  {getAllUsers, addNewUsers, getUserDetail, updateUser, deleteUser, register, login, getMyDetails, logout } from "../controllers/user.js";
 import { isAuthenticated } from "../middlewares/auth.js";
 
 
@@ -18,6 +18,8 @@ router.delete("/userid/:id",deleteUser)
 router.post("/register",register)
 
 router.post("/login",login)
+
+router.get("/logout",logout)
 
 router.get("/me",isAuthenticated, getMyDetails)
 

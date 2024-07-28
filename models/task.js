@@ -14,8 +14,8 @@ const mongooseSchema = new mongoose.Schema({
   },
 
   user:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"profile",
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"Profile",
     require:true,
   },
 
@@ -25,6 +25,6 @@ const mongooseSchema = new mongoose.Schema({
   },
 });
 
-const task = mongoose.model("task", mongooseSchema);
+const Task = mongoose.model("task", mongooseSchema);
 
-export default task;
+export default Task;

@@ -128,4 +128,16 @@ export const getMyDetails= (req,res)=>{
 
 }
 
+export const logout=async(req,res)=>{
+  res
+  .status(200)
+  .cookie("token","",{expires:new Date(Date.now()),
+    sameSite:"none",
+    secure : true
+  })
+  .json({
+    success:true,
+    messgae:"logout"
+  })
+}
 //   export default  getAllUsers
