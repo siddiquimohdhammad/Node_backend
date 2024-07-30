@@ -17,16 +17,17 @@ config({
 // using middlewares
 app.use(express.json());
 app.use(cookieParser());
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
 
 app.use(
   cors({
-  origin: [process.env.FRONTEND_URL,"http://localhost:5000"],
+  origin: [frontendUrl,"http://localhost:5000"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 })
 )
 
-app.options('*', cors());
+// app.options('*', cors());
 
 // using router
 app.use("/users",userRouter);  //users will be default for all userRouter path
