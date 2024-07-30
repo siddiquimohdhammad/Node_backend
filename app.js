@@ -17,7 +17,7 @@ config({
 // using middlewares
 app.use(express.json());
 app.use(cookieParser());
-const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+const frontendUrl = process.env.FRONTEND_URL;
 
 app.use(
   cors({
